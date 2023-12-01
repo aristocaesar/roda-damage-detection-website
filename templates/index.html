@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Pemetaan Deteksi Kerusakan Jalan - Masuk</title>
+    <link rel="shortcut icon" href="/public/static/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>body{font-family: 'poppins';}#landing{background-image: url("/public/static/landing.jpg");}</style>
+</head>
+<body>
+
+    <div class="flex h-screen">
+        <div class="w-1/4 p-4">
+            <form method="post" action="" class="h-full flex flex-col justify-center space-y-6">
+                <div class="flex items-center space-x-3">
+                    <img src="/public/static/contruction.png" alt="logo" width="60">
+                    <h1 class="font-bold">Sistem Informasi Pemetaan Deteksi Kerusakan Jalan</h1>
+                </div>
+                <p class="text-gray-600 text-sm">Pemetaan Cepat dan Akurat, Transformasi Jalan Menuju Keamanan dan Kualitas Terbaik.</p>
+                {% if error %}
+                    <p class="text-red-500 text-sm">Kode akses salah atau tidak terdaftar</p>
+                {% endif %}
+                <input id="code_access" type="text" name="code_access" class="w-full rounded border border-gray-500 px-2 py-3 text-sm" placeholder="Masukkan Kode Akses" required autofocus autocomplete="off">
+                <button type="submit" class="text-white font-bold bg-blue-800 hover:bg-blue-900 rounded w-full py-3 text-center text-sm">MASUK</button>
+                <div class="flex justify-center">
+                    <img src="/public/static/logo-jti.svg" alt="logo-jti" width="180">
+                </div>
+                <small class="text-center">&copy; kelompokdua.org</small>
+            </form>
+        </div>
+    
+        <div class="w-3/4">
+            <div id="landing" class="h-screen brightness-75"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
